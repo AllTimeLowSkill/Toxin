@@ -4,6 +4,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin  = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
+const { PassThrough } = require('stream')
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -44,7 +45,19 @@ module.exports = {
                 {
                     from: path.resolve(__dirname, 'src/img/instagram.png'),
                     to: path.resolve(__dirname, 'dist')
-                }
+                },
+                {
+                    from: path.resolve(__dirname, 'src/img/arrow_back.png'),
+                    to: path.resolve(__dirname, 'dist')
+                },
+                {
+                    from: path.resolve(__dirname, 'src/img/arrow_forward.png'),
+                    to: path.resolve(__dirname, 'dist')
+                },
+                {
+                    from: path.resolve(__dirname, 'src/img/expand_more.png'),
+                    to: path.resolve(__dirname, 'dist')
+                },
             ]
         
             

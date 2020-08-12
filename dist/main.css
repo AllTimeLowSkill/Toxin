@@ -103,7 +103,7 @@ main {
   background-position: center;
 }
 main .form {
-  width: 380px;
+  max-width: 380px;
   height: 375px;
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -114,33 +114,44 @@ main .form {
   top: 70px;
   left: 187px;
 }
-main .form .title {
+main .form .form-title {
   font-family: Quicksand;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
   color: #1F2041;
+  padding-right: 130px;
   padding-left: 30px;
-  padding-top: 40px;
-  padding-right: 80px;
+  margin-top: 40px;
 }
-main .form .data .date {
+main .form .isOpen {
+  display: none;
+}
+main .form .input-data {
+  margin-top: 20px;
   display: flex;
-  padding-left: 30px;
-  padding-right: 30px;
+  justify-content: space-around;
+  align-items: center;
 }
-main .form .data .date label {
+main .form .input-data .wrapper p {
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
-  color: #1F2041;
-  margin-bottom: 5px;
 }
-main .form .data .date input {
+main .form .input-data .wrapper .datepicker {
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+main .form .input-data .wrapper .datepicker .title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -150,15 +161,110 @@ main .form .data .date input {
   padding-left: 15px;
   padding-top: 12px;
   padding-bottom: 8px;
-  width: 150px;
-  margin-top: 5px;
+  padding-right: 9px;
 }
-main .form .data .counter {
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 21px;
+main .form .input-data .wrapper .datepicker .title .main-title {
+  padding-right: 18px;
 }
-main .form .data .counter label {
+main .form .input-data .wrapper .datepicker .title .arrow {
+  margin-right: 9px;
+}
+main .form .input-data .wrapper .datepicker2 {
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+main .form .input-data .wrapper .datepicker2 .title2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.75);
+  padding-left: 15px;
+  padding-top: 12px;
+  padding-bottom: 8px;
+}
+main .form .input-data .wrapper .datepicker2 .title2 .main-title2 {
+  padding-right: 18px;
+}
+main .form .input-data .wrapper .datepicker2 .title2 .arrow2 {
+  margin-right: 9px;
+}
+main .form .date {
+  margin-top: 6px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+}
+main .form .date .title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+main .form .date .title .now {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: #1F2041;
+}
+main .form .date .days-of-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding-right: 21px;
+  padding-left: 21px;
+}
+main .form .date .days-of-week .list-day-week {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  /* Primary Color */
+  color: #BC9CFF;
+  text-align: center;
+}
+main .form .date .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding-right: 21px;
+  padding-left: 21px;
+  margin-top: 20px;
+  justify-items: center;
+  align-items: center;
+}
+main .form .date .days .day-number {
+  width: 45px;
+  height: 30px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  padding-top: 13px;
+  color: rgba(31, 32, 65, 0.5);
+}
+main .form .date .days .day-number:hover {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 22px;
+}
+main .form .res-counter {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+main .form .res-counter p {
+  margin-block-end: 0;
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
@@ -166,38 +272,76 @@ main .form .data .counter label {
   line-height: 15px;
   text-transform: uppercase;
   color: #1F2041;
-  margin-bottom: 5px;
 }
-main .form .data .counter input {
-  width: 320px;
-  background: #FFFFFF;
+main .form .res-counter .res-title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
   border-radius: 4px;
-  margin-bottom: 31px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.75);
   padding-left: 15px;
   padding-top: 13px;
   padding-bottom: 13px;
 }
-main .form .data .counter .btn {
-  padding-top: 10px;
-  padding-bottom: 10px;
+main .form .res-counter .dropdown-counter {
+  position: absolute;
   width: 320px;
-  border: 1px solid #bc9cff;
-  border-radius: 22px;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+}
+main .form .res-counter .dropdown-counter .dropdown-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .form .res-counter .dropdown-counter .dropdown-wrapper .title {
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
-  background-color: #FFFFFF;
-  color: #bc9cff;
-  margin-bottom: 30px;
   text-transform: uppercase;
+  color: #1F2041;
+  padding-left: 15px;
 }
-main .form .data .counter .btn:hover {
-  background-color: #bc9cff;
-  color: #FFFFFF;
+main .form .res-counter .dropdown-counter .dropdown-wrapper .counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  padding-right: 20px;
+}
+main .form .res-counter .dropdown-counter .dropdown-wrapper .counter .negative {
+  height: 30px;
+  width: 30px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7px;
+  margin-top: 6px;
+}
+main .form .res-counter .dropdown-counter .dropdown-wrapper .counter .positive {
+  height: 30px;
+  width: 30px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*-----------------------------------------------------------------------MAIN--------------------------------------------------*/
